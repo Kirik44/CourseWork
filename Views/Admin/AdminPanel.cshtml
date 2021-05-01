@@ -1,0 +1,168 @@
+﻿@model IEnumerable<CourseWork.Models.Request>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Админпанель";
+}
+
+<div role="tabpanel">
+    <div class="list-group list-group-horizontal-sm" style="margin: 25px 0" id="myList" role="tablist">
+        <a class="text-black-50 list-group-item list-group-item-action active" style="background-color: #0007FF; width: 300px" data-toggle="list" href="#home" role="tab">Необработанные заявки</a>
+        <a class="text-black-50 list-group-item list-group-item-action" style="background-color: #0007FF; width: 300px" data-toggle="list" href="#profile" role="tab">Обрабатывающиеся заявки</a>
+        <a class="text-black-50 list-group-item list-group-item-action" style="background-color: #0007FF; width: 300px" data-toggle="list" href="#messages" role="tab">Обработанные заявки</a>
+        <a class="text-black-50 list-group-item list-group-item-action" style="background-color: #0007FF; width: 300px" data-toggle="list" href="#settings" role="tab">Все заявки</a>
+    </div>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="home" role="tabpanel">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td scope="col">#</td>
+                        <td scope="col">Имя</td>
+                        <td scope="col">Фамилия</td>
+                        <td scope="col">Email</td>
+                        <td scope="col">Коментарий</td>
+                        <td scope="col">Статус заявки</td>
+                        <td scope="col"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                    }
+                    @foreach (var messeng in Model)
+                    {
+                        if (messeng.Status == "Не обработана")
+                        {
+                            <tr>
+                                <td scope="row">@i</td>
+                                <td>@messeng.Name</td>
+                                <td>@messeng.SyrName</td>
+                                <td>@messeng.Email</td>
+                                <td>@messeng.Comment</td>
+                                <td>@messeng.Status</td>
+                                <td><a href="/Admin/Editing/@messeng.Id" role="button" class="btn btn-sm">Редактировать</a></td>
+                            </tr>
+                            {
+                                i = i + 1;
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane" id="profile" role="tabpanel">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td scope="col">#</td>
+                        <td scope="col">Имя</td>
+                        <td scope="col">Фамилия</td>
+                        <td scope="col">Email</td>
+                        <td scope="col">Коментарий</td>
+                        <td scope="col">Статус заявки</td>
+                        <td scope="col"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        i = 1;
+                    }
+                    @foreach (var messeng in Model)
+                    {
+                        if (messeng.Status == "Находится в обработке")
+                        {
+                            <tr>
+                                <td scope="row">@i</td>
+                                <td>@messeng.Name</td>
+                                <td>@messeng.SyrName</td>
+                                <td>@messeng.Email</td>
+                                <td>@messeng.Comment</td>
+                                <td>@messeng.Status</td>
+                                <td><a href="/Admin/Editing/@messeng.Id" role="button" class="btn btn-sm">Редактировать</a></td>
+                            </tr>
+                            {
+                                i = i + 1;
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane" id="messages" role="tabpanel">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td scope="col">#</td>
+                        <td scope="col">Имя</td>
+                        <td scope="col">Фамилия</td>
+                        <td scope="col">Email</td>
+                        <td scope="col">Коментарий</td>
+                        <td scope="col">Статус заявки</td>
+                        <td scope="col"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        i = 1;
+                    }
+                    @foreach (var messeng in Model)
+                    {
+                        if (messeng.Status == "Обработана")
+                        {
+                            <tr>
+                                <td scope="row">@i</td>
+                                <td>@messeng.Name</td>
+                                <td>@messeng.SyrName</td>
+                                <td>@messeng.Email</td>
+                                <td>@messeng.Comment</td>
+                                <td>@messeng.Status</td>
+                                <td><a href="/Admin/Editing/@messeng.Id" role="button" class="btn btn-sm">Редактировать</a></td>
+                            </tr>
+                            {
+                                i = i + 1;
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane" id="settings" role="tabpanel">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td scope="col">#</td>
+                        <td scope="col">Имя</td>
+                        <td scope="col">Фамилия</td>
+                        <td scope="col">Email</td>
+                        <td scope="col">Коментарий</td>
+                        <td scope="col">Статус заявки</td>
+                        <td scope="col"></td>
+                        <td scope="col"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        i = 1;
+                    }
+                    @foreach (var messeng in Model)
+                    {
+                    <tr>
+                        <td scope="row">@i</td>
+                        <td>@messeng.Name</td>
+                        <td>@messeng.SyrName</td>
+                        <td>@messeng.Email</td>
+                        <td>@messeng.Comment</td>
+                        <td>@messeng.Status</td>
+                        <td><a href="/Admin/Editing/@messeng.Id" role="button" class="btn btn-sm">Редактировать</a></td>
+                        <td><a href="/Admin/Delete/@messeng.Id" role="button" class="btn btn-sm">Удалить</a></td>
+                    </tr>
+                        {
+                            i = i + 1;
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

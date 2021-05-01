@@ -1,0 +1,41 @@
+﻿html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #000121;
+    color: #0007FF;
+}
+
+.mynavbar {
+    background-color: #05073A;
+}
+
+.btn {
+    background-color: #0007FF;
+    border: none;
+    color: black;
+}
+
+.btn:hover {
+    background-color: #2A2DA2;
+    color: #030548;
+}
+
+.myinput {
+    background-color: #E6E6FF;
+}
+
+.myinput:hover {
+    background-color: #E6E6FF;
+}
+
+.table {
+    color: #007bff;
+}
+
+.table td, .table th {
+    border-color: red;
+    border-top: none;
+    border-bottom: 2px solid;
+
+}

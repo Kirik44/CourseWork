@@ -1,0 +1,197 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/bundle.min.css" type="text/css" />
+    <title>Course Work</title>
+</head>
+
+
+<body class="template-base">
+    <div class="layout-1">
+        <div class="layout-1__main">
+            <div class="layout-1__info">
+                <img class="layout-1__info-men" src="img/men-2-small.png" alt="">
+                <h1 class="layout-1__info-title">Курсовые работы <span>на заказ</span></h1>
+                <p class="layout-1__info-text">Course Work - это интернет-биржа заказчиков и авторов студенческих работ. На нашем сайте вы можете заказать работу напрямую у любого из 1 авторa, не переплачивая агентствам и другим посредникам.</p>
+            </div>
+        </div>
+        <div class="form-marketeng" style="padding-bottom:100px">
+            <div class="form-marketeng__title">Отправьте нам свои данные и мы свяжемся с вами</div>
+            <form class="form-marketeng__main" action="/Home/Messeng" method="POST">
+
+                <input class="input-text" type="text" name="Name" placeholder="Имя" value="">
+                <input class="input-text" type="text" name="SyrName" placeholder="Фамилия" value="">
+                <input class="input-text" name="Email" id="form_email" value="" type="email" placeholder="Email">
+
+                <button class="btn">Отправить</button>
+
+                <input class="input-text" style="width:calc(300% + 30px)" type="text" name="Messeng" placeholder="Тема, кол-во страниц, требования к антиплагиату, к оформлению и т.д." value="">
+
+                <input type="hidden" name="Comment" value="">
+                <input type="hidden" name="Status" value="Не обработана">
+            </form>
+            @{
+                if (@ViewBag.Messeng != null)
+                {
+                    <div id="my-alert" class="alert @ViewBag.Type alert-dismissible fade show" role="alert">
+                        @ViewBag.Messeng
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <script>
+                        window.setTimeout(function () {
+                            $('#my-alert').alert('close');
+                        }, 5000);
+                    </script>
+                }
+            }
+        </div>
+    </div>
+    <div class="layout-2">
+        <div class="layout-2__slider">
+            <div class="layout-1__slider-item">
+                <div class="review">
+                    <div class="review__header">
+                        <div class="review__header-name">Андрей, студент 5 курса, Воронеж</div>
+                    </div>
+                    <h3 class="review__title">Отзыв о помощи с подготовкой к дипломной работе по менеджменту</h3>
+                    <p class="review__text">Просто нет слов что бы передать, насколько автор компетентный и пунктуальный и что самое главное готовый прийти на помощь в самой безысходной ситуации. Помог написать работу на 93% оригинальности! Текст очень хороший, научный руководитель был в восторге. Однозначно, за качественной работой сюда. Автору низкий поклон.</p>
+                    <div class="review__rating">
+                        <div class="review__rating-text">Общая оценка</div>
+                        <div class="review__rating-value">5.0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="layout-1__slider-item">
+                <div class="review">
+                    <div class="review__header">
+                        <div class="review__header-name">Артур, студент 3 курса, Тюмень</div>
+                    </div>
+                    <h3 class="review__title">Отзыв о помощи с подготовкой курсовой работы по рыночной экономике</h3>
+                    <p class="review__text">Была бы возможность поставить оценку больше 5 - поставил бы. Рекомендую! Быстро помогли разобраться с проблемой. Дополнительно заказал консультацию. Очень помогло. Стоял на отчислении, уже не знал, что и делать.</p>
+                    <div class="review__rating">
+                        <div class="review__rating-text">Общая оценка</div>
+                        <div class="review__rating-value">5.0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="layout-1__slider-item">
+                <div class="review">
+                    <div class="review__header">
+                        <div class="review__header-name">Виктория , студентка 2 курса, Москва</div>
+                    </div>
+                    <h3 class="review__title">Отзыв о помощи с подготовкой к контрольной работе по высшей математике</h3>
+                    <p class="review__text">Попалась сложное задание по высшей математике, сразу не смогла разобраться. Еще и куча работы навалилась. Очень тяжело работать и учиться одновременно. Вспомнила про задание, когда времени уже не было. Думала от тревоги с ума сойду. Хорошо, что тут быстро помогли. Разобралась и все сдала.</p>
+                    <div class="review__rating">
+                        <div class="review__rating-text">Общая оценка</div>
+                        <div class="review__rating-value">5.0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="layout-1__slider-item">
+                <div class="review">
+                    <div class="review__header">
+                        <div class="review__header-name">Константин, сутдент 4 курса, Казань</div>
+                    </div>
+                    <h3 class="review__title">Отзыв о подготовке к дипломной работе по географии</h3>
+                    <p class="review__text">Заказ выполнен раньше указанного срока, автор на протяжении всего заказа поддерживает связь. Всё отлично!</p>
+                    <div class="review__rating">
+                        <div class="review__rating-text">Общая оценка</div>
+                        <div class="review__rating-value">5.0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-sub">
+            <div class="l-wrap">
+                <div class="footer-sub__inner">
+                    <div class="footer-sub__copyright">© 2021 — 2021 «Course Work» Все права защищены</div><a class="footer-sub__confidentiality" href="/Admin/Login">Только для администрации</a>
+                    <div class="footer-sub-banks">
+                        <div class="footer-sub-banks__title">Мы принимаем:</div>
+                        <ul class="footer-sub-banks__list">
+                            <li class="footer-sub-banks__list-item"><img class="footer-sub-banks__img" src="img/logo-webmoney.png" alt=""></li>
+                            <li class="footer-sub-banks__list-item"><img class="footer-sub-banks__img" src="img/logo-yandexmoney.png" alt=""></li>
+                            <li class="footer-sub-banks__list-item"><img class="footer-sub-banks__img" src="img/logo-mastercard.png" alt=""></li>
+                            <li class="footer-sub-banks__list-item"><img class="footer-sub-banks__img" src="img/logo-visa.png" alt=""></li>
+                            <li class="footer-sub-banks__list-item"><img class="footer-sub-banks__img" src="img/logo-qiwi.png" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <div style="visibility: hidden; overflow: hidden; position: absolute; left:-9999px; width: 0; height: 0"><img src="?" height="1" width="1" /></div>
+</body>
+
+
+<!--
+<body>
+    <div class="container-md">
+        <form action="/Home/Messeng" method="post">
+            <h5 style="text-align:center;padding-bottom:15px">Введите свои данные чтобы мы могли связаться с вами</h5>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="validationDefault01">Имя</label>
+                        <input type="text" id="validationDefault01" name="Name" class="form-control" placeholder="Имя" required/>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="validationDefault02">Фамилия</label>
+                        <input type="text" id="validationDefault02" name="SyrName" class="form-control" placeholder="Фамилия" required/>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="validationDefault03">Email</label>
+                        <input type="text" id="validationDefault03" name="Email" class="form-control" placeholder="Email" required/>
+                    </div>
+                </div>
+            </div>
+            <h5 style="text-align: center"></h5>
+            <div class="form-group">
+                <label for="validationDefault04">Коментарий</label>
+                <input type="text" name="Messeng" id="validationDefault04" class="form-control" placeholder="Тема, кол-во страниц, требования к антиплагиату, к оформлению и т.д." required/>
+            </div>
+            <input type="hidden" name="Comment" value="">
+            <input type="hidden" name="Status" value="Не обработана">
+            <button class="btn" style="float:right" type="submit">Отправить</button>
+        </form>
+    </div>
+
+
+    <footer style="display:block; margin: 0 0 0 auto; padding-right:16px; flex-wrap: wrap; max-width: 500px" class="fixed-bottom">
+        {
+            if (ViewBag.Messeng != null)
+            {
+                <div style="display:block; flex-wrap: wrap" id="my-alert" class="alert ViewBag.Type alert-dismissible fade show" role="alert">
+                    ViewBag.Messeng
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <script>
+                    window.setTimeout(function () {
+                        $('#my-alert').alert('close');
+                    }, 5000);
+                </script>
+            }
+        }
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+    -->
+</html>
